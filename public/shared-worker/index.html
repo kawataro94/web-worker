@@ -14,14 +14,17 @@
     <br />
     <h1>
       workerの実行処理回数は<span class='executions'>0</span>です<br />
-      接続しているworkerは<span class='connections'>0</span>です
+      共有されているworker数は<span class='connections'>0</span>です*
     </h1>
-    <button id='button'>Worker thread にメッセージを渡す</button>
+    <button id='button'>Workerを実行する</button>
     <br />
     <br />
-    <a target="_blank" href=".">Create more Shared Worker</a>
+    <button id='button2'>Worker2を実行する</button>
+    <br />
+    <br />
+    <a target="_blank" href=".">タブを追加する</a>
   </div>
-  <p id="load">author: shintaro kawauchi</p>
+  <p id="load">* WorkerとWorker2は共有されています,また複数のタブ間でWorkerが共有されます</p>
   <script src='index.js'></script>
 </body>
 

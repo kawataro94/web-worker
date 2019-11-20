@@ -10,18 +10,22 @@
 
 <body>
   <div id="message">
-    <h2>Hello Dedicated Worker!</h2>
+    <h2>Hello Shared Worker!</h2>
     <br />
     <h1>
       workerの実行処理回数は<span class='executions'>0</span>です<br />
-      接続しているworkerは<span class='connections'>0</span>です
+      共有されているworker数は<span class='connections'>0</span>です*
     </h1>
-    <button id='button'>Worker threadにメッセージを渡す</button>
+    <button id='button'>Workerを実行する</button>
     <br />
     <br />
-    <a target="_blank" href=".">Create more Dedicated Worker</a>
+    <button id='button2'>Worker2を実行する</button>
+    <br />
+    <br />
+    <a target="_blank" href=".">タブを追加する</a>
   </div>
-  <p id="load">author: shintaro kawauchi</p>
+  <p id="load">* Shared Workerとの比較のため用意しています</p>
+  </div>
   <script src='index.js'></script>
 </body>
 

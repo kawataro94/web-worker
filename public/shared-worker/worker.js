@@ -9,11 +9,11 @@ self.addEventListener("connect", e => {
   port.addEventListener("message", e => {
     executions++
     port.postMessage([e.data, connections, executions]);
-  }, false);
+  });
 
   port.start();
 
-}, false);
+});
 
 
 
