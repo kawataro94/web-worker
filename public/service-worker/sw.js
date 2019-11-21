@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.0cbe9c68ed004b09db6492069b9109db.js"
+  "precache-manifest.0ca8f669f30d2843d2f319cb64ce05db.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "service-worker-sample"});
@@ -33,4 +33,4 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute("https://workers-419d8.firebaseapp.com/service-worker/index.html", new workbox.strategies.NetworkFirst({ "cacheName":"service-worker-sample-html-cache", plugins: [new workbox.expiration.Plugin({ maxAgeSeconds: 2592000, purgeOnQuotaError: false })] }), 'GET');
+workbox.routing.registerRoute("https://workers-419d8.firebaseapp.com/service-worker/index.html", new workbox.strategies.NetworkFirst({ "cacheName":"service-worker-sample-html-cache", plugins: [new workbox.expiration.Plugin({ maxAgeSeconds: 3600, purgeOnQuotaError: false })] }), 'GET');

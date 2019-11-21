@@ -10,6 +10,20 @@ module.exports = {
     filename: 'bundle.js',
     path: path.join(__dirname, 'public/service-worker')
   },
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: { url: false }
+          }
+        ]
+      }
+    ]
+  },
   plugins: [
     new workboxPlugin.GenerateSW({
       cacheId: cacheId,
@@ -20,20 +34,10 @@ module.exports = {
           options: {
             cacheName: cacheId + "-html-cache",
             expiration: {
-              maxAgeSeconds: 60 * 60 * 24 * 30,
+              maxAgeSeconds: 60 * 60,
             }
           }
         },
-        // {
-        //   urlPattern: 'https://workers-419d8.firebaseapp.com/public/style.css',
-        //   handler: "NetworkFirst",
-        //   options: {
-        //     cacheName: cacheId + "-html-cache",
-        //     expiration: {
-        //       maxAgeSeconds: 60 * 60 * 24 * 30,
-        //     }
-        //   }
-        // }
       ],
       swDest: __dirname + '/public/service-worker/sw.js'
     })
